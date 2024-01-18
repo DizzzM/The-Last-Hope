@@ -1,7 +1,7 @@
 FONT = ('PT Mono', 12)
 SCENE_BG = '#747474'
-BG = 'black'
-BUTTON_BG = 'gray'
+BG = '#505050'
+FG = '#F5F5F5'
 ROOMS = 3
 FLOORS = 3
 ENEMIES = 3
