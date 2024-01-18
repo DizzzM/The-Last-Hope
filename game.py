@@ -39,16 +39,18 @@ class Game:
         header.grid_rowconfigure(0, weight=1)
         header.grid_rowconfigure(1, weight=1)
 
-        floor_label = tk.Label(header, anchor=tk.W, text='Floor', font=config.FONT, bg=config.BG)
-        room_label = tk.Label(header, anchor=tk.W, text='Room', font=config.FONT, bg=config.BG)
+        floor_label = tk.Label(header, anchor=tk.W, text='Floor', font=config.FONT, bg=config.BG, fg=config.FG)
+        room_label = tk.Label(header, anchor=tk.W, text='Room', font=config.FONT, bg=config.BG, fg=config.FG)
         floor_label.grid(row=0, column=0, sticky=tk.W, padx=5)
         room_label.grid(row=1, column=0, sticky=tk.W, padx=5)
-        self.floor_value = tk.Label(header, anchor=tk.E, text=f'{self.floor}', font=config.FONT, bg=config.BG)
-        self.room_value = tk.Label(header, anchor=tk.E, text=f'{self.room}', font=config.FONT, bg=config.BG)
+        self.floor_value = tk.Label(header, anchor=tk.E, text=f'{self.floor}', font=config.FONT, bg=config.BG,
+                                    fg=config.FG)
+        self.room_value = tk.Label(header, anchor=tk.E, text=f'{self.room}', font=config.FONT, bg=config.BG,
+                                   fg=config.FG)
         self.floor_value.grid(row=0, column=1, sticky=tk.E, padx=5)
         self.room_value.grid(row=1, column=1, sticky=tk.E, padx=5)
-        enemy_hp_label = tk.Label(header, anchor=tk.W, text='Enemy HP', font=config.FONT, bg=config.BG)
-        self.enemy_hp_value = tk.Label(header, anchor=tk.E, text='00/00', font=config.FONT, bg=config.BG)
+        enemy_hp_label = tk.Label(header, anchor=tk.W, text='Enemy HP', font=config.FONT, bg=config.BG, fg=config.FG)
+        self.enemy_hp_value = tk.Label(header, anchor=tk.E, text='00/00', font=config.FONT, bg=config.BG, fg=config.FG)
         enemy_hp_label.grid(row=1, column=3, sticky=tk.W, padx=5)
         self.enemy_hp_value.grid(row=1, column=4, sticky=tk.E, padx=5)
 
@@ -107,22 +109,22 @@ class Game:
         stats.grid_rowconfigure(2, weight=1)
         stats.grid_rowconfigure(3, weight=1)
         stats.grid_rowconfigure(4, weight=1)
-        hp_label = tk.Label(stats, anchor=tk.W, text='HP', font=config.FONT, bg=config.BG)
-        def_label = tk.Label(stats, anchor=tk.W, text='DEF', font=config.FONT, bg=config.BG)
-        atk_label = tk.Label(stats, anchor=tk.W, text='ATK', font=config.FONT, bg=config.BG)
-        luck_label = tk.Label(stats, anchor=tk.W, text='LUCK', font=config.FONT, bg=config.BG)
-        cd_label = tk.Label(stats, anchor=tk.W, text='CAST CD', font=config.FONT, bg=config.BG)
+        hp_label = tk.Label(stats, anchor=tk.W, text='HP', font=config.FONT, bg=config.BG, fg=config.FG)
+        def_label = tk.Label(stats, anchor=tk.W, text='DEF', font=config.FONT, bg=config.BG, fg=config.FG)
+        atk_label = tk.Label(stats, anchor=tk.W, text='ATK', font=config.FONT, bg=config.BG, fg=config.FG)
+        luck_label = tk.Label(stats, anchor=tk.W, text='LUCK', font=config.FONT, bg=config.BG, fg=config.FG)
+        cd_label = tk.Label(stats, anchor=tk.W, text='CAST CD', font=config.FONT, bg=config.BG, fg=config.FG)
         hp_label.grid(row=0, column=0, sticky=tk.W, padx=10)
         def_label.grid(row=1, column=0, sticky=tk.W, padx=10)
         atk_label.grid(row=2, column=0, sticky=tk.W, padx=10)
         luck_label.grid(row=3, column=0, sticky=tk.W, padx=10)
         cd_label.grid(row=4, column=0, sticky=tk.W, padx=10)
 
-        self.hp_value = tk.Label(stats, anchor=tk.E, text=f'00/00', font=config.FONT, bg=config.BG)
-        self.def_value = tk.Label(stats, anchor=tk.E, text='00', font=config.FONT, bg=config.BG)
-        self.atk_value = tk.Label(stats, anchor=tk.E, text='00-00', font=config.FONT, bg=config.BG)
-        self.luck_value = tk.Label(stats, anchor=tk.E, text='00', font=config.FONT, bg=config.BG)
-        self.cd_value = tk.Label(stats, anchor=tk.E, text='0', font=config.FONT, bg=config.BG)
+        self.hp_value = tk.Label(stats, anchor=tk.E, text=f'00/00', font=config.FONT, bg=config.BG, fg=config.FG)
+        self.def_value = tk.Label(stats, anchor=tk.E, text='00', font=config.FONT, bg=config.BG, fg=config.FG)
+        self.atk_value = tk.Label(stats, anchor=tk.E, text='00-00', font=config.FONT, bg=config.BG, fg=config.FG)
+        self.luck_value = tk.Label(stats, anchor=tk.E, text='00', font=config.FONT, bg=config.BG, fg=config.FG)
+        self.cd_value = tk.Label(stats, anchor=tk.E, text='0', font=config.FONT, bg=config.BG, fg=config.FG)
         self.hp_value.grid(row=0, column=1, sticky=tk.E, padx=10)
         self.def_value.grid(row=1, column=1, sticky=tk.E, padx=10)
         self.atk_value.grid(row=2, column=1, sticky=tk.E, padx=10)
@@ -263,7 +265,7 @@ class Game:
                           bg=config.BG)
         header.grid(row=0, column=0, sticky=tk.NSEW)
         tk.Label(self.race_window, text='Click on the button with\nrace name to choose it', font=config.FONT,
-                 bg=config.BG).grid(
+                 bg=config.BG, fg=config.FG).grid(
                 row=0, column=0, sticky=tk.NSEW)
 
         main = tk.Frame(self.race_window,
@@ -281,34 +283,43 @@ class Game:
                   command=lambda: self.choose_race_util(human.Human()), bg=config.BG).grid(row=0, column=0,
                                                                                            sticky=tk.NSEW,
                                                                                            padx=5, pady=5)
-        tk.Label(main, text='Mid HP', font=config.FONT, bg=config.BG).grid(row=1, column=0, sticky=tk.NSEW, padx=5,
-                                                                           pady=5)
-        tk.Label(main, text='High DEF', font=config.FONT, bg=config.BG).grid(row=2, column=0, sticky=tk.NSEW, padx=5,
-                                                                             pady=5)
-        tk.Label(main, text='Low ATK', font=config.FONT, bg=config.BG).grid(row=3, column=0, sticky=tk.NSEW, padx=5,
-                                                                            pady=5)
+        tk.Label(main, text='Mid HP', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=1, column=0,
+                                                                                         sticky=tk.NSEW, padx=5,
+                                                                                         pady=5)
+        tk.Label(main, text='High DEF', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=2, column=0,
+                                                                                           sticky=tk.NSEW, padx=5,
+                                                                                           pady=5)
+        tk.Label(main, text='Low ATK', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=3, column=0,
+                                                                                          sticky=tk.NSEW, padx=5,
+                                                                                          pady=5)
 
         tk.Button(main, text='Dwarf', font=config.FONT,
                   command=lambda: self.choose_race_util(dwarf.Dwarf()), bg=config.BG).grid(row=0, column=1,
                                                                                            sticky=tk.NSEW,
                                                                                            padx=5, pady=5)
-        tk.Label(main, text='High HP', font=config.FONT, bg=config.BG).grid(row=1, column=1, sticky=tk.NSEW, padx=5,
-                                                                            pady=5)
-        tk.Label(main, text='Low DEF', font=config.FONT, bg=config.BG).grid(row=2, column=1, sticky=tk.NSEW, padx=5,
-                                                                            pady=5)
-        tk.Label(main, text='Mid ATK', font=config.FONT, bg=config.BG).grid(row=3, column=1, sticky=tk.NSEW, padx=5,
-                                                                            pady=5)
+        tk.Label(main, text='High HP', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=1, column=1,
+                                                                                          sticky=tk.NSEW, padx=5,
+                                                                                          pady=5)
+        tk.Label(main, text='Low DEF', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=2, column=1,
+                                                                                          sticky=tk.NSEW, padx=5,
+                                                                                          pady=5)
+        tk.Label(main, text='Mid ATK', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=3, column=1,
+                                                                                          sticky=tk.NSEW, padx=5,
+                                                                                          pady=5)
 
         tk.Button(main, text='Elf', font=config.FONT,
                   command=lambda: self.choose_race_util(elf.Elf()), bg=config.BG).grid(row=0, column=2,
                                                                                        sticky=tk.NSEW,
                                                                                        padx=5, pady=5)
-        tk.Label(main, text='Low HP', font=config.FONT, bg=config.BG).grid(row=1, column=2, sticky=tk.NSEW, padx=5,
-                                                                           pady=5)
-        tk.Label(main, text='Mid DEF', font=config.FONT, bg=config.BG).grid(row=2, column=2, sticky=tk.NSEW, padx=5,
-                                                                            pady=5)
-        tk.Label(main, text='High ATK', font=config.FONT, bg=config.BG).grid(row=3, column=2, sticky=tk.NSEW, padx=5,
-                                                                             pady=5)
+        tk.Label(main, text='Low HP', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=1, column=2,
+                                                                                         sticky=tk.NSEW, padx=5,
+                                                                                         pady=5)
+        tk.Label(main, text='Mid DEF', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=2, column=2,
+                                                                                          sticky=tk.NSEW, padx=5,
+                                                                                          pady=5)
+        tk.Label(main, text='High ATK', font=config.FONT, bg=config.BG, fg=config.FG).grid(row=3, column=2,
+                                                                                           sticky=tk.NSEW, padx=5,
+                                                                                           pady=5)
 
     def room_util(self, action, value):
         action(value)
@@ -332,16 +343,19 @@ class Game:
         hp = (tk.Button(self.room_window, text='+ HP', font=config.FONT,
                         command=lambda: self.room_util(self.player.add_hp, 10), bg=config.BG),
               tk.Label(self.room_window, text='+ 10 HP\nRestore 50% of HP', font=config.FONT, anchor=tk.CENTER,
-                       bg=config.BG))
+                       bg=config.BG, fg=config.FG))
         defence = (tk.Button(self.room_window, text='+ DEF', font=config.FONT,
                              command=lambda: self.room_util(self.player.add_def, 2), bg=config.BG),
-                   tk.Label(self.room_window, text='+ 2 DEF', font=config.FONT, anchor=tk.CENTER, bg=config.BG))
+                   tk.Label(self.room_window, text='+ 2 DEF', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                            fg=config.FG))
         atk = (tk.Button(self.room_window, text='+ ATK', font=config.FONT,
                          command=lambda: self.room_util(self.player.add_atk, 2), bg=config.BG),
-               tk.Label(self.room_window, text='+ 2 ATK', font=config.FONT, anchor=tk.CENTER, bg=config.BG))
+               tk.Label(self.room_window, text='+ 2 ATK', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                        fg=config.FG))
         luck = (tk.Button(self.room_window, text='+ LUCK', font=config.FONT,
                           command=lambda: self.room_util(self.player.add_luck, 1), bg=config.BG),
-                tk.Label(self.room_window, text='+ 1 LUCK', font=config.FONT, anchor=tk.CENTER, bg=config.BG))
+                tk.Label(self.room_window, text='+ 1 LUCK', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                         fg=config.FG))
 
         buffs = [hp, defence, atk, luck]
         chosen = random.sample(buffs, 3)
@@ -380,35 +394,37 @@ class Game:
                                                                                                               padx=5,
                                                                                                               pady=5)
         tk.Label(self.floor_window, text='+ 50% HP\nRestore 50% of HP', font=config.FONT, anchor=tk.CENTER,
-                 bg=config.BG).grid(row=2,
-                                    column=0,
-                                    sticky=tk.N,
-                                    padx=5,
-                                    pady=5)
+                 bg=config.BG, fg=config.FG).grid(row=2,
+                                                  column=0,
+                                                  sticky=tk.N,
+                                                  padx=5,
+                                                  pady=5)
         tk.Button(self.floor_window, text='+ DEF', font=config.FONT,
                   command=lambda: self.floor_util(self.player.add_def, 10), bg=config.BG).grid(row=1, column=1,
                                                                                                sticky=tk.NSEW,
                                                                                                padx=5, pady=5)
-        tk.Label(self.floor_window, text='+ 10 DEF', font=config.FONT, anchor=tk.CENTER, bg=config.BG).grid(row=2,
-                                                                                                            column=1,
-                                                                                                            sticky=tk.N,
-                                                                                                            padx=5,
-                                                                                                            pady=5)
+        tk.Label(self.floor_window, text='+ 10 DEF', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                 fg=config.FG).grid(row=2,
+                                    column=1,
+                                    sticky=tk.N,
+                                    padx=5,
+                                    pady=5)
         tk.Button(self.floor_window, text='+ ATK', font=config.FONT,
                   command=lambda: self.floor_util(self.player.add_atk, 5), bg=config.BG).grid(row=1, column=2,
                                                                                               sticky=tk.NSEW, padx=5,
                                                                                               pady=5)
-        tk.Label(self.floor_window, text='+ 5 ATK', font=config.FONT, anchor=tk.CENTER, bg=config.BG).grid(row=2,
-                                                                                                           column=2,
-                                                                                                           sticky=tk.N,
-                                                                                                           padx=5,
-                                                                                                           pady=5)
+        tk.Label(self.floor_window, text='+ 5 ATK', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                 fg=config.FG).grid(row=2,
+                                    column=2,
+                                    sticky=tk.N,
+                                    padx=5,
+                                    pady=5)
 
         tk.Label(self.floor_window, text='Choose your floor reward', font=config.FONT, anchor=tk.CENTER,
-                 bg=config.BG).grid(row=0,
-                                    column=0,
-                                    columnspan=3,
-                                    sticky=tk.NSEW)
+                 bg=config.BG, fg=config.FG).grid(row=0,
+                                                  column=0,
+                                                  columnspan=3,
+                                                  sticky=tk.NSEW)
 
     def boss_fight(self):
         self.player.heal(self.player.hp)
@@ -419,8 +435,9 @@ class Game:
         self.death_window = tk.Toplevel(self.window)
         self.death_window.geometry(f'600x800+{self.screen_width // 2 - 300}+{self.screen_height // 2 - 400}')
         self.death_window.configure(bg=config.BG)
-        tk.Label(self.death_window, text='You are dead', font=config.FONT, anchor=tk.CENTER, bg=config.BG).pack(
-            anchor=tk.CENTER)
+        tk.Label(self.death_window, text='You are dead', font=config.FONT, anchor=tk.CENTER, bg=config.BG,
+                 fg=config.FG).pack(
+                anchor=tk.CENTER)
 
     def win(self):
         self.window.withdraw()
@@ -428,7 +445,7 @@ class Game:
         self.win_window.geometry(f'600x800+{self.screen_width // 2 - 300}+{self.screen_height // 2 - 400}')
         self.win_window.configure(bg=config.BG)
         tk.Label(self.win_window, text='Congratulations!\n You have beaten this game!', font=config.FONT,
-                 anchor=tk.CENTER, bg=config.BG).pack(anchor=tk.CENTER)
+                 anchor=tk.CENTER, bg=config.BG, fg=config.FG).pack(anchor=tk.CENTER)
 
     def start(self):
         self.choose_race()
